@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 ThemeData getApplicationTheme() {
   return ThemeData(
     // main colors
+
     primaryColor: ColorManager.primary,
     primaryColorLight: ColorManager.lightPrimary,
     primaryColorDark: ColorManager.darkPrimary,
@@ -100,6 +101,5 @@ ThemeData getApplicationTheme() {
         ),
       ),
     ),
-
   );
 }

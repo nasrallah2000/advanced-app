@@ -1,3 +1,4 @@
+import 'package:advanced_app/data/local/chach_helper.dart';
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,9 @@ class _SplashViewState extends State<SplashView> {
   }
 
   _goNext() {
-    Navigator.pushReplacementNamed(context, Routes.onboardingRoute);
+    CachHelper.getData(key: 'onboarding') == true
+        ? Navigator.pushReplacementNamed(context, Routes.loginRoute)
+        : Navigator.pushReplacementNamed(context, Routes.onboardingRoute);
   }
 
   @override

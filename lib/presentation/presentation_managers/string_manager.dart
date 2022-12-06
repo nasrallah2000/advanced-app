@@ -1,20 +1,25 @@
 class AppStrings {
   static const noRouteFound = "noRouteFound";
-  static const onBoardingTitle1 = "on_boarding_title1";
-  static const onBoardingTitle2 = "on_boarding_title2";
-  static const onBoardingTitle3 = "on_boarding_title3";
-  static const onBoardingTitle4 = "on_boarding_title4";
+  static const onBoardingTitle1 = "SEE THE BEST COURSE #1";
+  static const onBoardingTitle2 = "SEE THE BEST COURSE #2";
+  static const onBoardingTitle3 = "SEE THE BEST COURSE #3";
+  static const onBoardingTitle4 = "SEE THE BEST COURSE #4";
 
-  static const onBoardingSubTitle1 = "on_boarding_desc1";
-  static const onBoardingSubTitle2 = "on_boarding_desc2";
-  static const onBoardingSubTitle3 = "on_boarding_desc3";
-  static const onBoardingSubTitle4 = "on_boarding_desc4";
+  static const onBoardingSubTitle1 =
+      "Tut app is an awesome flutter application using clean architecture #1";
+  static const onBoardingSubTitle2 =
+      "Tut app is an awesome flutter application using clean architecture #2";
+  static const onBoardingSubTitle3 =
+      "Tut app is an awesome flutter application using clean architecture #3";
+  static const onBoardingSubTitle4 =
+      "Tut app is an awesome flutter application using clean architecture #4";
   static const skip = "skip";
   static const username = "username_hint";
   static const password = "password_hint";
   static const usernameError = "username_error";
   static const passwordError = "password_error";
-  static const login = "login_button";
+  static const login = "login";
+  static const loginButton = "login_button";
   static const forgetPassword = "forgot_password_text";
   static const registerText = "register_text";
   static const loading = "loading";
@@ -25,8 +30,7 @@ class AppStrings {
   static const String resetPassword = "reset_password";
   static const String success = "success";
   static const String userNameInvalid = "username_hint_message";
-  static const String mobileNumberInvalid =
-      "mobile_number_hint_message";
+  static const String mobileNumberInvalid = "mobile_number_hint_message";
   static const String passwordInvalid = "password_hint_message";
   static const String alreadyHaveAccount = "already_have_account";
   static const register = "register";
