@@ -1,8 +1,10 @@
+import 'package:advanced_app/presentation/views/onboarding/onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
 
 class Routes {
   static const String splashRoute = '/';
+  static const String onboardingRoute = '/onboardingRoute';
   static const String loginRoute = '/login';
   static const String registerRoute = '/register';
   static const String forgotPasswordRoute = '/forgotPasswor';
@@ -15,6 +17,8 @@ class RoutesGenerator {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
+      case Routes.onboardingRoute:
+        return MaterialPageRoute(builder: (_) => const OnboardingView());
 
       default:
         return unDefinedRoute();
