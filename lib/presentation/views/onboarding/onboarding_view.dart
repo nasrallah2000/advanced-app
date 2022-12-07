@@ -10,7 +10,8 @@ class OnboardingView extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         OnBoardingCubit cubit = OnBoardingCubit.get(context);
-        return Scaffold(
+        return Scaffold(   
+  
           backgroundColor: ColorManager.white,
           appBar: AppBar(
             backgroundColor: ColorManager.white,
