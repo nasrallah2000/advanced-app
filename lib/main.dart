@@ -1,4 +1,5 @@
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
+import 'package:advanced_app/presentation/view_model/login/cubit.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => OnBoardingCubit()),
+        BlocProvider(create: (context) => LoginCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

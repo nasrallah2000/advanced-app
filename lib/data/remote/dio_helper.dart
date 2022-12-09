@@ -1,3 +1,4 @@
+import 'package:advanced_app/presentation/presentation_managers/exports.dart';
 import 'package:dio/dio.dart';
 
 class DioHelper{
@@ -6,7 +7,7 @@ class DioHelper{
   static init(){
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://student.valuxapps.com/api/',
+        baseUrl: AppConst.baseUrl,
         receiveDataWhenStatusError: true,
       ),
     );
