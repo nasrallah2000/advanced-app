@@ -14,14 +14,14 @@ class AppStrings {
   static const onBoardingSubTitle4 =
       "Tut app is an awesome flutter application using clean architecture #4";
   static const skip = "skip";
-  static const username = "username_hint";
-  static const password = "password_hint";
-  static const usernameError = "username_error";
-  static const passwordError = "password_error";
-  static const login = "login";
+  static const username = "Username";
+  static const password = "Password";
+  static const usernameError = "Please enter your user name";
+  static const passwordError = "Please enter your password";
+  static const login = "Login";
   static const loginButton = "login_button";
-  static const forgetPassword = "forgot_password_text";
-  static const registerText = "register_text";
+  static const forgetPassword = "Forget password";
+  static const registerText = "Not a member ? Sign up";
   static const loading = "loading";
   static const retryAgain = "retry_again";
   static const ok = "ok";

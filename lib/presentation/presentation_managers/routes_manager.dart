@@ -1,5 +1,7 @@
-import 'package:advanced_app/presentation/views/login/login_view.dart';
-import 'package:advanced_app/presentation/views/onboarding/onboarding_view.dart';
+
+import 'package:advanced_app/presentation/screens/login/views/login_view.dart';
+import 'package:advanced_app/presentation/screens/onboarding/views/onboarding_view.dart';
+import 'package:advanced_app/presentation/screens/splash/views/splash_views.dart';
 import 'package:flutter/material.dart';
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
 

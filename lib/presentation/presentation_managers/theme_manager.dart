@@ -56,22 +56,22 @@ ThemeData getApplicationTheme() {
       bodyLarge: getRegularStyle(color: ColorManager.grey1),
       bodySmall: getRegularStyle(color: ColorManager.grey),
       bodyMedium: getRegularStyle(color: ColorManager.grey2, fontSize: FontSize.s12),
-      labelSmall: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s12),
+      labelSmall: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s14),
     ),
 
     // input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
       // content padding
-      contentPadding: const EdgeInsets.all(AppPadding.p8),
+      contentPadding: const EdgeInsets.all(AppPadding.p18),
 
       // hint style
-      hintStyle: getRegularStyle(color: ColorManager.grey, fontSize: FontSize.s14),
-      labelStyle: getMediumStyle(color: ColorManager.grey, fontSize: FontSize.s14),
+      hintStyle: getRegularStyle(color: ColorManager.lightGrey, fontSize: FontSize.s17),
+      labelStyle: getMediumStyle(color: ColorManager.lightGrey, fontSize: FontSize.s17),
       errorStyle: getRegularStyle(color: ColorManager.error),
 
       // enabled border style
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColorManager.grey, width: AppSize.s1_5),
+        borderSide: BorderSide(color: ColorManager.lightGrey, width: AppSize.s1_5),
         borderRadius: const BorderRadius.all(
           Radius.circular(AppSize.s8),
         ),

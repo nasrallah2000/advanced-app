@@ -1,4 +1,5 @@
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
+import 'package:advanced_app/presentation/screens/onboarding/views/widgets/onboarding_pages.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingItem extends StatelessWidget {

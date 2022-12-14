@@ -1,4 +1,8 @@
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
+import 'package:advanced_app/presentation/screens/onboarding/view_model/cubit.dart';
+import 'package:advanced_app/presentation/screens/onboarding/view_model/states.dart';
+import 'package:advanced_app/presentation/screens/onboarding/views/widgets/onboarding_bottom.dart';
+import 'package:advanced_app/presentation/screens/onboarding/views/widgets/onborading_item.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
-import 'package:advanced_app/presentation/view_model/login/cubit.dart';
+import 'package:advanced_app/presentation/screens/login/view_model/cubit.dart';
+import 'package:advanced_app/presentation/screens/onboarding/view_model/cubit.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
