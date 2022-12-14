@@ -58,6 +58,10 @@ ThemeData getApplicationTheme() {
       bodyMedium: getRegularStyle(color: ColorManager.grey2, fontSize: FontSize.s12),
       labelSmall: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s14),
     ),
+    
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: ColorManager.primary,
+    ),
 
     // input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(

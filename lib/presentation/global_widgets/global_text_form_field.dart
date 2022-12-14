@@ -1,4 +1,3 @@
-import 'package:advanced_app/presentation/presentation_managers/exports.dart';
 import 'package:flutter/material.dart';
 
 class GlobalTextFormField extends StatelessWidget {
@@ -6,6 +5,8 @@ class GlobalTextFormField extends StatelessWidget {
   final TextEditingController? textController;
   final InputDecoration? decoration;
   String? Function(String?)? validator;
+  final String? vaildMessage;
+  final bool? isPassword;
 
   GlobalTextFormField({
     super.key,
@@ -13,6 +14,8 @@ class GlobalTextFormField extends StatelessWidget {
     this.textController,
     this.decoration,
     this.validator,
+    this.vaildMessage,
+    this.isPassword,
   });
 
   @override
@@ -24,11 +27,11 @@ class GlobalTextFormField extends StatelessWidget {
       validator: validator ??
           (String? value) {
             if (value!.isEmpty) {
-              return 'Please fill this field';
+              return vaildMessage ?? 'Please fill this field';
             }
+            return null;
           },
-
-      
+      obscureText: isPassword ?? false,
     );
   }
 }

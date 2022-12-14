@@ -1,8 +1,10 @@
+import 'package:advanced_app/presentation/global_widgets/global_text_button.dart';
 import 'package:advanced_app/presentation/global_widgets/global_text_form_field.dart';
 import 'package:advanced_app/presentation/presentation_managers/exports.dart';
 import 'package:advanced_app/presentation/screens/login/view_model/cubit.dart';
 import 'package:advanced_app/presentation/screens/login/view_model/states.dart';
-
+import 'package:advanced_app/utities/main_method.dart';
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -11,7 +13,11 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is LoginSuccessState) {
+          showToast(text: 'Login Successfully', state: ToastState.SUCCESS);
+        }
+      },
       builder: (context, state) {
         LoginCubit cubit = LoginCubit.get(context);
         return Scaffold(
@@ -32,7 +38,8 @@ class LoginView extends StatelessWidget {
                     child: GlobalTextFormField(
                       textInputType: TextInputType.emailAddress,
                       textController: cubit.emailController,
-                      decoration: InputDecoration(
+                      vaildMessage: AppStrings.usernameError,
+                      decoration: const InputDecoration(
                         hintText: AppStrings.username,
                         labelText: AppStrings.username,
                       ),
@@ -44,7 +51,9 @@ class LoginView extends StatelessWidget {
                     child: GlobalTextFormField(
                       textInputType: TextInputType.visiblePassword,
                       textController: cubit.passwordController,
-                      decoration: InputDecoration(
+                      vaildMessage: AppStrings.passwordError,
+                      isPassword: true,
+                      decoration: const InputDecoration(
                         hintText: AppStrings.password,
                         labelText: AppStrings.password,
                       ),
@@ -54,36 +63,42 @@ class LoginView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: AppPadding.p28),
                     child: SizedBox(
-                      height: 50,
+                      height: AppSize.s50,
                       width: double.infinity,
-                      child: ElevatedButton(
+                      child: ConditionalBuilder(
+                        condition: state is! LoginLoadingState,
+                        builder: (context) => ElevatedButton(
                           onPressed: () {
-                            cubit.userLogin();
+                            if (cubit.formKey.currentState!.validate()) {
+                              cubit.userLogin();
+                            }
                           },
-                          child: Text(
+                          child: const Text(
                             AppStrings.login,
-                          )),
+                          ),
+                        ),
+                        fallback: (context) => const Center(child: CircularProgressIndicator()),
+                      ),
                     ),
                   ),
                   const SizedBox(height: AppSize.s28),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          AppStrings.forgetPassword,
-                          style: Theme.of(context).textTheme.labelSmall,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p28),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GlobalTextButton(
+                          onPressed: () {},
+                          text: AppStrings.forgetPassword,
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          AppStrings.registerText,
-                          style: Theme.of(context).textTheme.labelSmall,
+                        GlobalTextButton(
+                          onPressed: () {
+                            //navTo(routeName: Routes.splashRoute, context: context);
+                          },
+                          text: AppStrings.registerText,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),

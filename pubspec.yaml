@@ -30,6 +30,8 @@ dependencies:
   json_annotation: ^4.7.0
   internet_connection_checker: ^1.0.0+1
   dartz: ^0.10.1
+  conditional_builder_null_safety: ^0.0.6
+  fluttertoast: ^8.1.2
   
   
 

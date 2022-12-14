@@ -16,23 +16,20 @@ class LoginCubit extends Cubit<LoginStates> {
 
   AuthModel? authModel;
   InternetConnectionChecker? networkInfo;
-  void userLogin() async {
+  void userLogin()  {
     emit(LoginLoadingState());
-    if (await networkInfo!.hasConnection) {
-      await DioHelper.postData(
-        url: AppConst.loginEndPoint,
-        data: {
-          'email': emailController.text.trim(),
-          'password': passwordController.text.trim(),
-        },
-      ).then((value) {
-        authModel = AuthModel.fromJson(value!.data);
-        emit(LoginSuccessState());
-      }).catchError((error) {
-        emit(LoginErrorState(error));
-      });
-    } else {
-      print('no internet');
-    }
+     DioHelper.postData(
+      url: AppConst.loginEndPoint,
+      data: {
+        'email': emailController.text,
+        'password': passwordController.text,
+      },
+    ).then((value) {
+      authModel = AuthModel.fromJson(value!.data);
+      emit(LoginSuccessState());
+    }).catchError((error) {
+      emit(LoginErrorState(error.toString()));
+      debugPrint(error.toString());
+    });
   }
 }
